@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: telegrammy-backend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: telegrammy-backend
+  template:
+    metadata:
+      labels:
+        app: telegrammy-backend
+    spec:
+      containers:
+        - name: telegrammy-backend
+          image: telegrammy/backend:1.0
+          imagePullPolicy: Always
+          ports:  
+            - containerPort: 8080
