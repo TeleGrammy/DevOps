@@ -3,21 +3,22 @@ kind: Ingress
 metadata:
   name: lb-ingress
 spec:
+  ingressClassName: nginx
   rules:
-    - host: telegrammy.tech
-      http:
-        paths:
-          - path: /api/
-            pathType: prefix
-            backend:
-              service:
-                name: telegrammy-backend-service
-                port:
-                  number: 80
-          - path: /
-            pathType: prefix
-            backend:
-              service:
-                name: telegrammy-frontend-service
-                port:
-                  number: 80
+  - host: telegrammy.tech
+    http:
+      paths:
+      - path: /api/
+        pathType: Prefix
+        backend:
+          service:
+            name: telegrammy-backend-service
+            port:
+              number: 80
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: telegrammy-frontend-service
+            port:
+              number: 80

@@ -13,8 +13,11 @@ spec:
         app: telegrammy-backend
     spec:
       containers:
-        - name: telegrammy-backend
-          image: telegrammy/backend:1.0
-          imagePullPolicy: Always
-          ports:  
-            - containerPort: 8080
+      - name: telegrammy-backend
+        image: telegrammy/backend:group-channel-management
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - secretRef:
+            name: app-secret
