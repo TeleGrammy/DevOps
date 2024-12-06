@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: certbot-issuer
+spec:
+  acme:
+    email: msayedelbohy@hotmail.com
+    server: https://acme-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      name: telegrammy-tls-secret
+    solvers:
+    - http01:
+        ingress:
+          ingressClassName: nginx
