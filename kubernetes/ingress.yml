@@ -22,3 +22,7 @@ spec:
             name: telegrammy-frontend-service
             port:
               number: 80
+  tls:
+  - hosts:
+    - telegrammy.tech
+    secretName: telegrammy-tls-secret
