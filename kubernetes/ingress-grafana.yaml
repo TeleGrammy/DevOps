@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: grafana-ingress
+  namespace: "monitoring"
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: monitor.telegrammy.tech
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: stable-grafana
+            port:
+              number: 80
+  tls:
+  - hosts:
+    - monitor.telegrammy.tech
+    secretName: monitoring-telegrammy-tls-secret
