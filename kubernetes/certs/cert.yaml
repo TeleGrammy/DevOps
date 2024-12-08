@@ -7,6 +7,7 @@ spec:
   secretName: telegrammy-tls-secret
   dnsNames:
   - telegrammy.tech
+  - sockets.telegrammy.tech
   issuerRef:
     name: certbot-issuer
     kind: ClusterIssuer
