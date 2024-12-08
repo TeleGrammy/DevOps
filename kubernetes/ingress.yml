@@ -32,15 +32,15 @@ spec:
             port:
               number: 80
   - host: sockets.telegrammy.tech
-   http:
-     paths:
-    - path: /
-      pathType: Prefix
-      backend:
-         service:
-           name: telegrammy-backend-service
-           port:
-             number: 80
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: telegrammy-backend-service
+            port:
+              number: 80
   tls:
   - hosts:
     - telegrammy.tech
