@@ -4,4 +4,5 @@ metadata:
   name: frontend-config
   namespace: default
 data:
-  VITE_API_URL: http://telegrammy.tech/api
+  VITE_API_URL: https://telegrammy.tech/api
+  VITE_WS_URL: https://telegrammy.tech
