@@ -31,7 +31,18 @@ spec:
             name: telegrammy-frontend-service
             port:
               number: 80
+  - host: sockets.telegrammy.tech
+   http:
+     paths:
+    - path: /
+      pathType: Prefix
+      backend:
+         service:
+           name: telegrammy-backend-service
+           port:
+             number: 80
   tls:
   - hosts:
     - telegrammy.tech
+    - sockets.telegrammy.tech
     secretName: telegrammy-tls-secret
