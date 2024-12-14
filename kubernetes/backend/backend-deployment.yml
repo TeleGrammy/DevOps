@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: telegrammy-backend-deployment
 spec:
+  revisionHistoryLimit: 2
   replicas: 1
   selector:
     matchLabels:
@@ -12,7 +13,6 @@ spec:
       labels:
         app: telegrammy-backend
     spec:
-      revisionHistoryLimit: 2
       containers:
       - name: telegrammy-backend
         image: telegrammy/backend:1
