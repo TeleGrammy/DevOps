@@ -12,6 +12,7 @@ spec:
       labels:
         app: telegrammy-backend
     spec:
+      revisionHistoryLimit: 2
       containers:
       - name: telegrammy-backend
         image: telegrammy/backend:1
