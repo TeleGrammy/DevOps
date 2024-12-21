@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: telegrammy-backend
-        image: telegrammy/backend:1
+        image: telegrammy/backend:2
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
